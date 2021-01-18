@@ -4438,6 +4438,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "OnboardingSIGDB1.IOC/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/OnboardingSIGDB1.IOC.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OnboardingSIGDB1.IOC.dll": {}
+        }
       }
     }
   },
@@ -12147,13 +12157,19 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "OnboardingSIGDB1.IOC/1.0.0": {
+      "type": "project",
+      "path": "../OnboardingSIGDB1.IOC/OnboardingSIGDB1.IOC.csproj",
+      "msbuildProject": "../OnboardingSIGDB1.IOC/OnboardingSIGDB1.IOC.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
-      "Microsoft.NETCore.App >= 2.2.0"
+      "Microsoft.NETCore.App >= 2.2.0",
+      "OnboardingSIGDB1.IOC >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -12182,7 +12198,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "targetAlias": "netcoreapp2.2",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.IOC\\OnboardingSIGDB1.IOC.csproj": {
+              "projectPath": "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.IOC\\OnboardingSIGDB1.IOC.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

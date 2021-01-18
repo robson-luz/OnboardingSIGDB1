@@ -1,11 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "x8m4dXayELGlMSh78wnJuiJ1T9FJID7u72dHoyBHISHiNrDg229EYtnprs0MxLQH9vxS1KyBf2313YPqKQfuUg==",
+  "dgSpecHash": "jQE+IBpKeb6wrGV2p7J7BPqd1usvu1iLX0Dn/O+gvgNoFyP3S2rgMETgYCohv4gI2gPKLzMQbJ+2dWkKKIjMbg==",
   "success": true,
   "projectFilePath": "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.Domain\\OnboardingSIGDB1.Domain.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\robson.luz\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\robson.luz\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\robson.luz\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\robson.luz\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\robson.luz\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\robson.luz\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
+    "C:\\Users\\robson.luz\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.7.0\\system.reflection.emit.ilgeneration.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }
