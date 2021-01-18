@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "WuB4ZNjzrmXX1d0xStIBmXYYjP4KFW9JuslpO0ZSrXdrNukiRNiB4jQee6nZXJapFgRXAeRDDLgIBUx9LNXTpA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.IOC\\OnboardingSIGDB1.IOC.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\robson.luz\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\robson.luz\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
