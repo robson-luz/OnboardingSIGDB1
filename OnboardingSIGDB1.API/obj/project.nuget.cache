@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "/heRI7NVmV+Hq1+HNBdYqK8+JJ3DXmRrXdSoYRTlSypG9dZEdwBK+vcR4bqOtBfr5Q73sF5yBM09+V4QkLog6Q==",
+  "dgSpecHash": "4l26vfcbeaf7FGcZviHkBW+WNVN1IcMnqVrRU5ttPd6kRJTlaZ7i2yCd8o+re+y/7q86Uc/Id3Xt6s/HfbRupg==",
   "success": true,
   "projectFilePath": "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.API\\OnboardingSIGDB1.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\robson.luz\\.nuget\\packages\\automapper\\7.0.1\\automapper.7.0.1.nupkg.sha512",
+    "C:\\Users\\robson.luz\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\5.0.1\\automapper.extensions.microsoft.dependencyinjection.5.0.1.nupkg.sha512",
     "C:\\Users\\robson.luz\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.6\\microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
     "C:\\Users\\robson.luz\\.nuget\\packages\\microsoft.aspnetcore\\2.2.0\\microsoft.aspnetcore.2.2.0.nupkg.sha512",
     "C:\\Users\\robson.luz\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
@@ -280,7 +282,7 @@
     "C:\\Users\\robson.luz\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.1\\system.threading.tasks.extensions.4.5.1.nupkg.sha512",
     "C:\\Users\\robson.luz\\.nuget\\packages\\system.threading.tasks.parallel\\4.3.0\\system.threading.tasks.parallel.4.3.0.nupkg.sha512",
     "C:\\Users\\robson.luz\\.nuget\\packages\\system.threading.thread\\4.3.0\\system.threading.thread.4.3.0.nupkg.sha512",
-    "C:\\Users\\robson.luz\\.nuget\\packages\\system.valuetuple\\4.3.0\\system.valuetuple.4.3.0.nupkg.sha512",
+    "C:\\Users\\robson.luz\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
     "C:\\Users\\robson.luz\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\robson.luz\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\robson.luz\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",

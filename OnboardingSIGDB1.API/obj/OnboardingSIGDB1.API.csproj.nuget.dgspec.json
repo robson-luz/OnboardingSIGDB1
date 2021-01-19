@@ -76,14 +76,89 @@
         }
       }
     },
-    "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.IOC\\OnboardingSIGDB1.IOC.csproj": {
+    "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.Data\\OnboardingSIGDB1.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.IOC\\OnboardingSIGDB1.IOC.csproj",
-        "projectName": "OnboardingSIGDB1.IOC",
-        "projectPath": "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.IOC\\OnboardingSIGDB1.IOC.csproj",
+        "projectUniqueName": "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.Data\\OnboardingSIGDB1.Data.csproj",
+        "projectName": "OnboardingSIGDB1.Data",
+        "projectPath": "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.Data\\OnboardingSIGDB1.Data.csproj",
         "packagesPath": "C:\\Users\\robson.luz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.IOC\\obj\\",
+        "outputPath": "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\robson.luz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.Domain\\OnboardingSIGDB1.Domain.csproj": {
+                "projectPath": "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.Domain\\OnboardingSIGDB1.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.Domain\\OnboardingSIGDB1.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.Domain\\OnboardingSIGDB1.Domain.csproj",
+        "projectName": "OnboardingSIGDB1.Domain",
+        "projectPath": "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.Domain\\OnboardingSIGDB1.Domain.csproj",
+        "packagesPath": "C:\\Users\\robson.luz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\robson.luz\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -116,6 +191,86 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.IOC\\OnboardingSIGDB1.IOC.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.IOC\\OnboardingSIGDB1.IOC.csproj",
+        "projectName": "OnboardingSIGDB1.IOC",
+        "projectPath": "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.IOC\\OnboardingSIGDB1.IOC.csproj",
+        "packagesPath": "C:\\Users\\robson.luz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.IOC\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\robson.luz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "targetAlias": "netcoreapp2.2",
+            "projectReferences": {
+              "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.Data\\OnboardingSIGDB1.Data.csproj": {
+                "projectPath": "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.Data\\OnboardingSIGDB1.Data.csproj"
+              },
+              "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.Domain\\OnboardingSIGDB1.Domain.csproj": {
+                "projectPath": "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.Domain\\OnboardingSIGDB1.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "targetAlias": "netcoreapp2.2",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
               "autoReferenced": true
             }
           },

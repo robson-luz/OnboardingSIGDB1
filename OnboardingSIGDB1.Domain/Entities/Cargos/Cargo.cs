@@ -10,7 +10,7 @@ namespace OnboardingSIGDB1.Domain.Entities.Cargos
         public int Id { get; private set; }
         public string Descricao { get; private set; }
 
-        public ICollection<Funcionario> Funcionarios { get; private set; }
+        public ICollection<FuncionarioCargo> FuncionariosCargos { get; private set; }
 
         public Cargo(string descricao)
         {

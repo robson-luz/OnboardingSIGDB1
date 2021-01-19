@@ -4,13 +4,13 @@ using System.Text;
 
 namespace OnboardingSIGDB1.Domain.Base
 {
-    public interface IRepository<T> where T : class
+    public interface IRepository<TEntidade>
     {
-        List<T> Consultar();
-        T ObterPorId(int id);
-        void Adicionar(T entidade);
-        void Atualizar(T entidade);
-        void Deletar(T entidade);
+        List<TEntidade> Consultar();
+        TEntidade ObterPorId(int id);
+        void Adicionar(TEntidade entidade);
+        void Atualizar(TEntidade entidade);
+        void Remover(TEntidade entidade);
 
     }
 }
