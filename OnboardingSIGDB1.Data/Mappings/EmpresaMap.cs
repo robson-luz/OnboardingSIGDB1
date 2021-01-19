@@ -14,6 +14,7 @@ namespace OnboardingSIGDB1.Data.Mappings
             builder.HasKey(e => e.Id);
 
             builder.Property(e => e.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Property(e => e.Nome).IsRequired().HasMaxLength(150);
             builder.Property(e => e.Cnpj).IsRequired().HasMaxLength(14);
             builder.Property(e => e.DataFundacao);
 

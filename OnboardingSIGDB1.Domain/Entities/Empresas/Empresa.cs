@@ -27,10 +27,5 @@ namespace OnboardingSIGDB1.Domain.Entities.Empresas
 
             Funcionarios = new List<Funcionario>();
         }
-        public void AdicionarFuncionario(Funcionario funcionario)
-        {
-            if(funcionario != null)
-                Funcionarios.Add(funcionario);
-        }
     }
 }

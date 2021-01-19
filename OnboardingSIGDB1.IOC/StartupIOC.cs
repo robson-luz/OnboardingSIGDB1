@@ -15,7 +15,7 @@ namespace OnboardingSIGDB1.IOC
         public static void ConfigureServices(IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<DataContext>(options => 
-                options.UseSqlServer(@"Server=(localdb)\\mssqllocaldb;Database=SIGDB1;Trusted_Connection=True;MultipleActiveResultSets=true"));
+                options.UseSqlServer(configuration["ConnectionString"]));
 
             services.AddScoped(typeof (IRepository<>), typeof(Repository<>));
             services.AddScoped(typeof(IEmpresaRepository), typeof(EmpresaRepository));

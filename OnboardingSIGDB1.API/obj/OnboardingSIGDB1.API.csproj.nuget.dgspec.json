@@ -28,6 +28,9 @@
           "netcoreapp2.2": {
             "targetAlias": "netcoreapp2.2",
             "projectReferences": {
+              "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.Domain\\OnboardingSIGDB1.Domain.csproj": {
+                "projectPath": "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.Domain\\OnboardingSIGDB1.Domain.csproj"
+              },
               "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.IOC\\OnboardingSIGDB1.IOC.csproj": {
                 "projectPath": "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.IOC\\OnboardingSIGDB1.IOC.csproj"
               }
