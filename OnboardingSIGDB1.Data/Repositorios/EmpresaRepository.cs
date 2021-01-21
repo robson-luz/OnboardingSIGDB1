@@ -32,7 +32,7 @@ namespace OnboardingSIGDB1.Data.Repositorios
             return query;
         }
 
-        public IQueryable<Empresa> ConsultarComFiltro(EmpresaFiltroDto dto)
+        public List<Empresa> ConsultarComFiltro(EmpresaFiltroDto dto)
         {
             var query = Context.Set<Empresa>()
                 .Include(i => i.Funcionarios)
@@ -40,8 +40,9 @@ namespace OnboardingSIGDB1.Data.Repositorios
                 .ComCnpj(dto.Cnpj)
                 .DataFundacaoMaiorQue(dto.DataFundacaoInicio)
                 .DataFundacaoMenorQue(dto.DataFundacaoFim);            
+            //colocar paginacao
 
-            return query;
+            return query.ToList();
         }
     }
 }

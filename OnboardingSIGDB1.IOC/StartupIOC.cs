@@ -8,6 +8,7 @@ using OnboardingSIGDB1.Domain.Interfaces;
 using OnboardingSIGDB1.Data.Repositorios;
 using AutoMapper;
 using OnboardingSIGDB1.Domain.Services;
+using OnboardingSIGDB1.Domain.Notifications;
 
 namespace OnboardingSIGDB1.IOC
 {
@@ -20,12 +21,15 @@ namespace OnboardingSIGDB1.IOC
 
             services.AddScoped(typeof (IRepository<>), typeof(Repository<>));
             services.AddScoped(typeof(IEmpresaRepository), typeof(EmpresaRepository));
+            services.AddScoped(typeof(ICargoRepository), typeof(CargoRepository));
+            services.AddScoped(typeof(IFuncionaroRepository), typeof(FuncionarioRepository));
             services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
+
+            services.AddScoped<NotificationContext>();
 
             services.AddScoped<ArmazenadorDeEmpresa>();
 
-            services.AddAutoMapper(typeof(StartupIOC));
-            
+            services.AddAutoMapper(typeof(StartupIOC));            
         }
     }
 }

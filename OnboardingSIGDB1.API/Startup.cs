@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using OnboardingSIGDB1.Domain.Base;
+using OnboardingSIGDB1.Domain.Notifications;
 using OnboardingSIGDB1.IOC;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,8 @@ namespace OnboardingSIGDB1.API
         {
             StartupIOC.ConfigureServices(services, Configuration);
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc(options => options.Filters.Add<NotificationFilter>())
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             //services.AddCors(options =>
             //{

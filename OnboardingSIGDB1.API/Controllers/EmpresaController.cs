@@ -27,7 +27,23 @@ namespace OnboardingSIGDB1.API.Controllers
 
 
         [HttpGet("Empresas/Consultar")]
-        public List<EmpresaDto> Consultar()
+        public List<EmpresaDto> ConsultarFiltro(EmpresaFiltroDto dto)
+        {
+            var empresas = _empresaRepository
+                .ConsultarComFiltro(dto);
+
+            List<EmpresaDto> empresasDto = new List<EmpresaDto>();
+
+            foreach (var empresa in empresas)
+            {
+                empresasDto.Add(_mapper.Map<EmpresaDto>(empresa));
+            }
+
+            return empresasDto;
+        }
+
+        [HttpGet("Empresas")]
+        public ActionResult<List<EmpresaDto>> Get()
         {
             var empresas = _empresaRepository
                 .Consultar();

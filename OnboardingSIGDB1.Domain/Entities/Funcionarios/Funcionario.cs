@@ -68,5 +68,11 @@ namespace OnboardingSIGDB1.Domain.Entities.Funcionarios
         {
             DataContratacao = dataContratacao;
         }
+
+        public void AlterarIdEmpresa(int idEmpresa)
+        {
+            IdEmpresa = idEmpresa;
+        }
+
     }
 }
