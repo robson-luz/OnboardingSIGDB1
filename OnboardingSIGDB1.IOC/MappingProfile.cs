@@ -27,7 +27,8 @@ namespace OnboardingSIGDB1.IOC
                 .ForMember(dto => dto.Id, o => o.MapFrom(s => s.Id))
                 .ForMember(dto => dto.Cpf, o => o.MapFrom(s => s.Cpf))
                 .ForMember(dto => dto.DataContratacao, o => o.MapFrom(s => s.DataContratacao))
-                .ForMember(dto => dto.IdEmpresa, o => o.MapFrom(s => s.IdEmpresa));
+                .ForMember(dto => dto.IdEmpresa, o => o.MapFrom(s => s.IdEmpresa))
+                .ForMember(dto => dto.NomeEmpresa, o => o.MapFrom(s => s.Empresa.Nome));
         }
     }
 }

@@ -10,7 +10,7 @@ using OnboardingSIGDB1.Data.Queries;
 
 namespace OnboardingSIGDB1.Data.Repositorios
 {
-    public class FuncionarioRepository : Repository<Funcionario>
+    public class FuncionarioRepository : Repository<Funcionario>, IFuncionarioRepository
     {
         public FuncionarioRepository(DataContext context) : base(context)
         {
@@ -33,7 +33,7 @@ namespace OnboardingSIGDB1.Data.Repositorios
             return query;
         }
 
-        public IQueryable<Funcionario> ConsultarComFiltro(FuncionarioFiltroDto dto)
+        public List<Funcionario> ConsultarComFiltro(FuncionarioFiltroDto dto)
         {
             var query = Context.Set<Funcionario>()
                 .Include(i => i.Empresa)
@@ -42,8 +42,9 @@ namespace OnboardingSIGDB1.Data.Repositorios
                 .ComCpf(dto.Cpf)
                 .DataContratacaoMaiorQue(dto.DataContratacaoInicio)
                 .DataContratacaoMenorQue(dto.DataContratacaoFim);
+            //depois colocar paginacao
 
-            return query;
+            return query.ToList();
         }
     }
 }

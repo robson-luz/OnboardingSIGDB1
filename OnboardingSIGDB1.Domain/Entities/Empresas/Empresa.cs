@@ -67,11 +67,6 @@ namespace OnboardingSIGDB1.Domain.Entities.Empresas
         public void AlterarDataFundacao(DateTime dataFundacao)
         {
             DataFundacao = dataFundacao;
-        }
-
-        public bool CnpjValido()
-        {
-            return false;
-        }
+        }        
     }
 }

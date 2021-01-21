@@ -1,5 +1,6 @@
 ﻿using OnboardingSIGDB1.Domain.Dto;
 using OnboardingSIGDB1.Domain.Entities.Empresas;
+using OnboardingSIGDB1.Domain.Helpers;
 using OnboardingSIGDB1.Domain.Interfaces;
 using OnboardingSIGDB1.Domain.Notifications;
 using System;
@@ -15,12 +16,19 @@ namespace OnboardingSIGDB1.Domain.Services
 
         public ArmazenadorDeEmpresa(NotificationContext notificationContext, IEmpresaRepository empresaRepository)
         {
-            notificationContext = _notificationContext;
+            _notificationContext = notificationContext;
             _empresaRepository = empresaRepository;
         }
 
         public void Armazenar(EmpresaDto dto)
         {
+            if (!ValidadorCpfCnpj.CnpjValido(dto.Cnpj))
+            {
+                _notificationContext.AddNotification("500", "Cnpj inválido.");
+                return;
+            }
+
+
             if (dto.Id == 0)
             {
                 var empresa = new Empresa(dto.Nome, dto.Cnpj, dto.DataFundacao.Value);

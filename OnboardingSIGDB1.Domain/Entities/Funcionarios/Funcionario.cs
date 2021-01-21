@@ -59,7 +59,7 @@ namespace OnboardingSIGDB1.Domain.Entities.Funcionarios
             Nome = nome;
         }
 
-        public void AlterarCnpj(string cpf)
+        public void AlterarCpf(string cpf)
         {
             Cpf = cpf;
         }
