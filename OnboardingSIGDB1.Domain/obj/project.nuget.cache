@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "x8m4dXayELGlMSh78wnJuiJ1T9FJID7u72dHoyBHISHiNrDg229EYtnprs0MxLQH9vxS1KyBf2313YPqKQfuUg==",
+  "dgSpecHash": "xbZ4HHYadxBEmajeB7dh5rhFPVCpreloL1URHPMKb/BXhRSTE0uoqbcwgfjKkweXNUW5K2oap0LH9GeayN4GQQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.Domain\\OnboardingSIGDB1.Domain.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\robson.luz\\.nuget\\packages\\fluentvalidation\\8.6.3\\fluentvalidation.8.6.3.nupkg.sha512",
     "C:\\Users\\robson.luz\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\robson.luz\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\robson.luz\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\robson.luz\\.nuget\\packages\\system.componentmodel.annotations\\4.4.1\\system.componentmodel.annotations.4.4.1.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "b+EhzihvoIl95f0STTHeLhWG6LhjrHC1mOvOxcLdCcPaKJUr7cpVE7xRGhtTwejDwXfC87B1FLbdHSFAXa4mkA==",
+  "dgSpecHash": "/yH6mFixlN/Ou8xZigOp5lNe8NRPzjDtR2iGkHH0qEPdWI6Xuq7Y+uGkSP9EdVSTVukhSA52S3+5zfsibeoExQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.Data\\OnboardingSIGDB1.Data.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\robson.luz\\.nuget\\packages\\fluentvalidation\\8.6.3\\fluentvalidation.8.6.3.nupkg.sha512",
     "C:\\Users\\robson.luz\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\robson.luz\\.nuget\\packages\\microsoft.entityframeworkcore\\2.2.0\\microsoft.entityframeworkcore.2.2.0.nupkg.sha512",
     "C:\\Users\\robson.luz\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\2.2.0\\microsoft.entityframeworkcore.abstractions.2.2.0.nupkg.sha512",

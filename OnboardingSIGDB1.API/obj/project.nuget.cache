@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Wo8rMPGwPYfIVUp8Gf1p25DlSr8O/evYiF1RNscrx30EFToU80xfCqiseRV5nkSOuYIos4AUcvUSW1HYnCaz6g==",
+  "dgSpecHash": "iNY4e4tf3e7Kcg9cB8nNLtROhuG2xyjmLSXree8CvHHVv+GpzGdxsVBoFh03bqF31Z13DiwyX0rloOf88OuNuQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.API\\OnboardingSIGDB1.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\robson.luz\\.nuget\\packages\\automapper\\7.0.1\\automapper.7.0.1.nupkg.sha512",
     "C:\\Users\\robson.luz\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\5.0.1\\automapper.extensions.microsoft.dependencyinjection.5.0.1.nupkg.sha512",
+    "C:\\Users\\robson.luz\\.nuget\\packages\\fluentvalidation\\8.6.3\\fluentvalidation.8.6.3.nupkg.sha512",
     "C:\\Users\\robson.luz\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.6\\microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
     "C:\\Users\\robson.luz\\.nuget\\packages\\microsoft.aspnetcore\\2.2.0\\microsoft.aspnetcore.2.2.0.nupkg.sha512",
     "C:\\Users\\robson.luz\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",

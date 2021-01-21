@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "GbCH4FKVSovV0x83+S0BAR8CEmljylzJCZ7Vxgx/lvhEVAnj0RqxRycXMfXBXdYcs+8yEXGnMZgXEdGrdB+NOw==",
+  "dgSpecHash": "hO3jVkMOsdOjybPb/XZIYx0rH4+ioGM2hRcYD062Hg8tkbHJol4ZEPoUaMu/u43pNlpxUYWLLOFLTng63Y1Vug==",
   "success": true,
   "projectFilePath": "C:\\Users\\robson.luz\\source\\repos\\OnboardingSIGDB1\\OnboardingSIGDB1.IOC\\OnboardingSIGDB1.IOC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\robson.luz\\.nuget\\packages\\automapper\\7.0.1\\automapper.7.0.1.nupkg.sha512",
     "C:\\Users\\robson.luz\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\5.0.1\\automapper.extensions.microsoft.dependencyinjection.5.0.1.nupkg.sha512",
+    "C:\\Users\\robson.luz\\.nuget\\packages\\fluentvalidation\\8.6.3\\fluentvalidation.8.6.3.nupkg.sha512",
     "C:\\Users\\robson.luz\\.nuget\\packages\\microsoft.entityframeworkcore\\2.2.0\\microsoft.entityframeworkcore.2.2.0.nupkg.sha512",
     "C:\\Users\\robson.luz\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\2.2.0\\microsoft.entityframeworkcore.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\robson.luz\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\2.2.0\\microsoft.entityframeworkcore.analyzers.2.2.0.nupkg.sha512",

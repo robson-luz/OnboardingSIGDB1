@@ -8,6 +8,6 @@ namespace OnboardingSIGDB1.Domain.Interfaces
 {
     public interface IEmpresaRepository : IRepository<Empresa>
     {
-        Empresa obterPorCnpj(string cnpj);
+        Empresa ObterPorCnpj(string cnpj);
     }
 }
