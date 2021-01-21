@@ -7,7 +7,7 @@ using FluentValidation;
 
 namespace OnboardingSIGDB1.Domain.Entities.Empresas
 {
-    public class Empresa : Entidade
+    public class Empresa : Entidade<Empresa>
     {
         public string Nome { get; private set; }
         public string Cnpj { get; private set; }
@@ -27,19 +27,32 @@ namespace OnboardingSIGDB1.Domain.Entities.Empresas
             DataFundacao = dataFundacao;
         }
 
-        //public override bool Validate()
-        //{
-        //    RuleFor(e => e.Nome)
-        //        .MaximumLength(150);
+        public override bool Validar()
+        {
+            RuleFor(e => e.Nome)
+                .NotNull().NotEmpty()
+                .WithMessage("Campo'Nome' é obrigatório.");
 
-        //    RuleFor(e => e.Cnpj)
-        //        .MaximumLength(14);
+            RuleFor(e => e.Nome)
+                .MaximumLength(150)
+                .WithMessage("Campo'Nome' deve ter menos que 150 caracteres.");
 
-        //    RuleFor(e => e.DataFundacao)
-        //        .GreaterThan(DateTime.MinValue);
+            RuleFor(e => e.Cnpj)
+                .NotNull().NotEmpty()
+                .WithMessage("Campo'Cnpj' é obrigatório.");
 
-        //    return true;
-        //}
+            RuleFor(e => e.Cnpj)
+                .MaximumLength(14)
+                .WithMessage("Campo'Cpnj' está fora do tamanho padrão.");
+
+            RuleFor(e => e.DataFundacao)
+                .GreaterThan(DateTime.MinValue)
+                .WithMessage("Campo 'Data Fundação' inválido.");
+
+            ValidationResult = Validate(this);
+
+            return ValidationResult.IsValid;
+        }
 
         public void AlterarNome(string nome)
         {

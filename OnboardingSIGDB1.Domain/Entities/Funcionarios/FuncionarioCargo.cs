@@ -7,7 +7,7 @@ using System.Text;
 
 namespace OnboardingSIGDB1.Domain.Entities.Funcionarios
 {
-    public class FuncionarioCargo : Entidade
+    public class FuncionarioCargo : Entidade<FuncionarioCargo>
     {
         public int IdFuncionario { get; set; }
         public int IdCargo { get; set; }
@@ -15,5 +15,10 @@ namespace OnboardingSIGDB1.Domain.Entities.Funcionarios
 
         public virtual Cargo Cargo { get; set; }
         public virtual Funcionario Funcionario { get; set; }
+
+        public override bool Validar()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

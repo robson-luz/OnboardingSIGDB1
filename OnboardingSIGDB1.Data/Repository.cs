@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace OnboardingSIGDB1.Data
 {
-    public class Repository<TEntidade> : IRepository<TEntidade> where TEntidade : Entidade
+    public class Repository<TEntidade> : IRepository<TEntidade> where TEntidade : Entidade<TEntidade>
     {
         protected readonly DataContext Context;
 

@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using OnboardingSIGDB1.Domain.Dto;
+using OnboardingSIGDB1.Data.Queries;
 
 namespace OnboardingSIGDB1.Data.Repositorios
 {
@@ -26,6 +28,18 @@ namespace OnboardingSIGDB1.Data.Repositorios
             var query = Context.Set<Empresa>()
                 .Include(i => i.Funcionarios)
                 .ToList();
+
+            return query;
+        }
+
+        public IQueryable<Empresa> ConsultarComFiltro(EmpresaFiltroDto dto)
+        {
+            var query = Context.Set<Empresa>()
+                .Include(i => i.Funcionarios)
+                .OndeNomeContem(dto.Nome)
+                .ComCnpj(dto.Cnpj)
+                .DataFundacaoMaiorQue(dto.DataFundacaoInicio)
+                .DataFundacaoMenorQue(dto.DataFundacaoFim);            
 
             return query;
         }
