@@ -30,7 +30,7 @@ namespace OnboardingSIGDB1.Domain.Services
 
             if (dto.Id == 0)
             {
-                var funcionario = new Funcionario(dto.Nome, dto.Cpf, dto.DataContratacao.Value, dto.IdEmpresa);
+                var funcionario = new Funcionario(dto.Nome, dto.Cpf, dto.DataContratacao.Value);
 
                 if(!funcionario.Validar())
                 {
