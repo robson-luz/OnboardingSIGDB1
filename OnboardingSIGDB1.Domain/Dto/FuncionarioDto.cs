@@ -14,7 +14,10 @@ namespace OnboardingSIGDB1.Domain.Dto
             set { Cpf = Cpf.Replace(".", String.Empty).Replace("-", String.Empty); }
         }
         public DateTime? DataContratacao { get; set; }
+
         public int IdEmpresa { get; set; }
         public string NomeEmpresa { get; set; }
+
+        public int IdCargo { get; set; }
     }
 }

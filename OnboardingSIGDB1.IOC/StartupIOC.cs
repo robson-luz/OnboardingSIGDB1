@@ -28,6 +28,10 @@ namespace OnboardingSIGDB1.IOC
             services.AddScoped<NotificationContext>();
 
             services.AddScoped<ArmazenadorDeEmpresa>();
+            services.AddScoped<ArmazenadorDeCargo>();
+            services.AddScoped<ArmazenadorDeFuncionario>();
+            services.AddScoped<VinculacaoDeFuncionarioACargo>();
+            services.AddScoped<VinculacaoDeFuncionarioAEmpresa>();
 
             services.AddAutoMapper(typeof(StartupIOC));            
         }

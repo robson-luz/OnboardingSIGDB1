@@ -18,7 +18,7 @@ namespace OnboardingSIGDB1.Data.Mappings
             builder.Property(fc => fc.IdCargo).IsRequired();
             builder.Property(fc => fc.DataVinculo).IsRequired();
 
-            builder.HasOne(fc => fc.Funcionario).WithMany(f => f.FuncionariosCargos).HasForeignKey(fc => fc.IdFuncionario);
+            builder.HasOne(fc => fc.Funcionario).WithMany(f => f.CargosVinculados).HasForeignKey(fc => fc.IdFuncionario);
             builder.HasOne(fc => fc.Cargo).WithMany(f => f.FuncionariosCargos).HasForeignKey(fc => fc.IdCargo);
         }
     }

@@ -23,11 +23,21 @@ namespace OnboardingSIGDB1.Data.Repositorios
             return entidade.Any() ? entidade.First() : null;
         }
 
+        public override Funcionario ObterPorId(int id)
+        {
+            var query = Context.Set<Funcionario>()
+                .Include(i => i.Empresa)
+                .Include(i => i.CargosVinculados)
+                .Where(e => e.Id == id);
+
+            return query.Any() ? query.First() : null;
+        }
+
         public override List<Funcionario> Consultar()
         {
             var query = Context.Set<Funcionario>()
                 .Include(i => i.Empresa)
-                .Include(i => i.FuncionariosCargos)
+                .Include(i => i.CargosVinculados)
                 .ToList();
 
             return query;
@@ -37,7 +47,7 @@ namespace OnboardingSIGDB1.Data.Repositorios
         {
             var query = Context.Set<Funcionario>()
                 .Include(i => i.Empresa)
-                .Include(i => i.FuncionariosCargos)
+                .Include(i => i.CargosVinculados)
                 .OndeNomeContem(dto.Nome)
                 .ComCpf(dto.Cpf)
                 .DataContratacaoMaiorQue(dto.DataContratacaoInicio)

@@ -19,7 +19,7 @@ namespace OnboardingSIGDB1.Data.Mappings
             builder.Property(f => f.DataContratacao);
 
             builder.HasOne(f => f.Empresa).WithMany(e => e.Funcionarios).HasForeignKey(f => f.IdEmpresa);
-            builder.HasMany(f => f.FuncionariosCargos).WithOne(fc => fc.Funcionario).HasForeignKey(fc => fc.IdFuncionario).OnDelete(DeleteBehavior.Restrict);
+            builder.HasMany(f => f.CargosVinculados).WithOne(fc => fc.Funcionario).HasForeignKey(fc => fc.IdFuncionario).OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

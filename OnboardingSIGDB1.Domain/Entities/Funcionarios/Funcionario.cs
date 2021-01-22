@@ -14,17 +14,16 @@ namespace OnboardingSIGDB1.Domain.Entities.Funcionarios
         public string Cpf { get; private set; }
         public DateTime? DataContratacao { get; private set; }
 
-        public int IdEmpresa { get; set; }
+        public int? IdEmpresa { get; set; }
         public virtual Empresa Empresa { get; private set; }
 
-        public virtual ICollection<FuncionarioCargo> FuncionariosCargos { get; set; }
+        public virtual ICollection<FuncionarioCargo> CargosVinculados { get; set; }
 
-        public Funcionario(string nome, string cpf, DateTime? dataContratacao, int idEmpresa)
+        public Funcionario(string nome, string cpf, DateTime? dataContratacao)
         {
             Nome = nome;
             Cpf = cpf;
             DataContratacao = dataContratacao;
-            IdEmpresa = idEmpresa;
         }
 
         public override bool Validar()
@@ -72,6 +71,16 @@ namespace OnboardingSIGDB1.Domain.Entities.Funcionarios
         public void AlterarIdEmpresa(int idEmpresa)
         {
             IdEmpresa = idEmpresa;
+        }
+
+        public void AlterarEmpresa(Empresa empresa)
+        {
+            Empresa = empresa;
+        }
+
+        public void AdicionarCargo(FuncionarioCargo cargoVinculado)
+        {
+            CargosVinculados.Add(cargoVinculado);
         }
 
     }
