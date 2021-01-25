@@ -28,6 +28,14 @@ namespace OnboardingSIGDB1.Domain.Services
                 return;
             }
 
+            var empresaExistente = _empresaRepository.ObterPorCnpj(dto.Cnpj);
+            if (empresaExistente != null && empresaExistente.Id != dto.Id)
+            {
+                _notificationContext.AddNotification("500", "Uma empresa com esse Cnpj já foi cadastrada.");
+
+                return;
+            }
+
 
             if (dto.Id == 0)
             {
@@ -44,15 +52,6 @@ namespace OnboardingSIGDB1.Domain.Services
             }
             else
             {
-                var empresaExistente = _empresaRepository.ObterPorCnpj(dto.Cnpj);
-
-                if(empresaExistente != null && empresaExistente.Id != dto.Id)
-                {
-                    _notificationContext.AddNotification("500","Uma empresa com esse Cnpj já foi cadastrada.");
-
-                    return;
-                }                    
-
                 var empresa = _empresaRepository.ObterPorId(dto.Id);
 
                 if (!empresa.Validar())

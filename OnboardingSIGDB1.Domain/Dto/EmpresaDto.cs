@@ -11,5 +11,11 @@ namespace OnboardingSIGDB1.Domain.Dto
         public string Cnpj { get; set; }
         
         public DateTime? DataFundacao { get; set; }
+
+        public EmpresaDto()
+        {
+            if(!String.IsNullOrEmpty(Cnpj))
+                Cnpj = Cnpj.Replace(".", string.Empty).Replace("/", string.Empty);
+        }
     }
 }

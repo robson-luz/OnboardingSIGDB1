@@ -8,16 +8,18 @@ namespace OnboardingSIGDB1.Domain.Dto
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        public string Cpf {
-            get { return Cpf; }
-
-            set { Cpf = Cpf.Replace(".", String.Empty).Replace("-", String.Empty); }
-        }
+        public string Cpf { get; set; }
         public DateTime? DataContratacao { get; set; }
 
         public int IdEmpresa { get; set; }
         public string NomeEmpresa { get; set; }
 
         public int IdCargo { get; set; }
+
+        public FuncionarioDto()
+        {
+            if (!String.IsNullOrEmpty(Cpf))
+                Cpf = Cpf.Replace(".", string.Empty).Replace("-", string.Empty);
+        }
     }
 }
