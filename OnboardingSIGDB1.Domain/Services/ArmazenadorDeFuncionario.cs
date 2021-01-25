@@ -9,7 +9,7 @@ using System.Text;
 
 namespace OnboardingSIGDB1.Domain.Services
 {
-    public class ArmazenadorDeFuncionario
+    public class ArmazenadorDeFuncionario : IArmazenadorDeFuncionario
     {
         private readonly IFuncionarioRepository _funcionarioRepository;
         private readonly NotificationContext _notificationContext;
@@ -67,12 +67,5 @@ namespace OnboardingSIGDB1.Domain.Services
             }
         }
 
-        public void Remover(int id)
-        {
-            var funcionario = _funcionarioRepository.ObterPorId(id);
-
-            if(funcionario != null)
-                _funcionarioRepository.Remover(funcionario);
-        }
     }
 }

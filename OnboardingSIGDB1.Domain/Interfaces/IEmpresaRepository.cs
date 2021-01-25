@@ -3,6 +3,7 @@ using OnboardingSIGDB1.Domain.Dto;
 using OnboardingSIGDB1.Domain.Entities.Empresas;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace OnboardingSIGDB1.Domain.Interfaces
@@ -11,6 +12,6 @@ namespace OnboardingSIGDB1.Domain.Interfaces
     {
         Empresa ObterPorCnpj(string cnpj);
 
-        List<Empresa> ConsultarComFiltro(EmpresaFiltroDto dto);
+        IQueryable<Empresa> ConsultaComFiltro();
     }
 }

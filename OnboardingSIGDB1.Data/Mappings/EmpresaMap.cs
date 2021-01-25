@@ -18,6 +18,10 @@ namespace OnboardingSIGDB1.Data.Mappings
             builder.Property(e => e.Cnpj).IsRequired().HasMaxLength(14);
             builder.Property(e => e.DataFundacao);
 
+            builder.Ignore(e => e.Invalid);
+            builder.Ignore(e => e.Valid);
+            builder.Ignore(e => e.ValidationResult);
+
             builder.HasMany(e => e.Funcionarios).WithOne(f => f.Empresa).HasForeignKey(f => f.IdEmpresa).OnDelete(DeleteBehavior.Restrict);
         }
     }

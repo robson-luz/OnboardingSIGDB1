@@ -16,6 +16,10 @@ namespace OnboardingSIGDB1.Data.Mappings
             builder.Property(e => e.Id).IsRequired().ValueGeneratedOnAdd();
             builder.Property(c => c.Descricao).HasMaxLength(250).IsRequired();
 
+            builder.Ignore(e => e.Invalid);
+            builder.Ignore(e => e.Valid);
+            builder.Ignore(e => e.ValidationResult);
+
             builder.HasMany(c => c.FuncionariosCargos).WithOne(fc => fc.Cargo).HasForeignKey(fc => fc.IdCargo);
         }
     }

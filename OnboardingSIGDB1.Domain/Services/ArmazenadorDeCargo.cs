@@ -8,7 +8,7 @@ using System.Text;
 
 namespace OnboardingSIGDB1.Domain.Services
 {
-    public class ArmazenadorDeCargo
+    public class ArmazenadorDeCargo : IArmazenadorDeCargo
     {
         private readonly ICargoRepository _cargoRepository;
         private readonly NotificationContext _notificationContext;
@@ -47,14 +47,6 @@ namespace OnboardingSIGDB1.Domain.Services
 
                 _cargoRepository.Atualizar(Cargo);
             }
-        }
-
-        public void Remover(int id)
-        {
-            var Cargo = _cargoRepository.ObterPorId(id);
-
-            if(Cargo != null)
-                _cargoRepository.Remover(Cargo);
         }
     }
 }

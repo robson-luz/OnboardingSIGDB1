@@ -9,6 +9,7 @@ using OnboardingSIGDB1.Data.Repositorios;
 using AutoMapper;
 using OnboardingSIGDB1.Domain.Services;
 using OnboardingSIGDB1.Domain.Notifications;
+using OnboardingSIGDB1.Domain.Services.Consulta;
 
 namespace OnboardingSIGDB1.IOC
 {
@@ -23,17 +24,25 @@ namespace OnboardingSIGDB1.IOC
             services.AddScoped(typeof(IEmpresaRepository), typeof(EmpresaRepository));
             services.AddScoped(typeof(ICargoRepository), typeof(CargoRepository));
             services.AddScoped(typeof(IFuncionarioRepository), typeof(FuncionarioRepository));
+
             services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
 
             services.AddScoped<NotificationContext>();
 
-            services.AddScoped<ArmazenadorDeEmpresa>();
-            services.AddScoped<ArmazenadorDeCargo>();
-            services.AddScoped<ArmazenadorDeFuncionario>();
+            services.AddScoped(typeof(IEmpresaConsulta), typeof(EmpresaConsulta));
+            services.AddScoped(typeof(IFuncionarioConsulta), typeof(FuncionarioConsulta));            
+
+            services.AddScoped(typeof(IArmazenadorDeEmpresa), typeof(ArmazenadorDeEmpresa));
+            services.AddScoped(typeof(IArmazenadorDeCargo), typeof(ArmazenadorDeCargo));
+            services.AddScoped(typeof(IArmazenadorDeFuncionario), typeof(ArmazenadorDeFuncionario));
+
+            services.AddScoped<ExclusaoDeEmpresa>();
+            services.AddScoped<ExclusaoDeCargo>();
+            services.AddScoped<ExclusaoDeFuncionario>();
             services.AddScoped<VinculacaoDeFuncionarioACargo>();
             services.AddScoped<VinculacaoDeFuncionarioAEmpresa>();
 
-            services.AddAutoMapper(typeof(StartupIOC));            
+            services.AddAutoMapper(typeof(StartupIOC));
         }
     }
 }

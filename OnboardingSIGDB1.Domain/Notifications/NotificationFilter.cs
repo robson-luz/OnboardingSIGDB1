@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace OnboardingSIGDB1.Domain.Notifications
 {
-    public class NotificationFilter : IAsyncResultFilter
+    public class NotificationFilter /*: IAsyncResultFilter*/ : IResultFilter
     {
         private readonly NotificationContext _notificationContext;
 
@@ -18,20 +18,39 @@ namespace OnboardingSIGDB1.Domain.Notifications
             _notificationContext = notificationContext;
         }
 
-        public async Task OnResultExecutionAsync(ResultExecutingContext context, ResultExecutionDelegate next)
+        public void OnResultExecuted(ResultExecutedContext context)
         {
-            if(_notificationContext.HasNotifications)
+
+        }
+
+        //public async Task OnResultExecutionAsync(ResultExecutingContext context, ResultExecutionDelegate next)
+        //{
+        //    if(_notificationContext.HasNotifications)
+        //    {
+        //        context.HttpContext.Response.StatusCode = (int) HttpStatusCode.BadRequest;
+        //        context.HttpContext.Response.ContentType = "application/json";
+
+        //        var notifications = JsonConvert.SerializeObject(_notificationContext.Notifications);
+        //        await context.HttpContext.Response.WriteAsync(notifications);
+
+        //        return;
+        //    }
+
+        //    await next();
+        //}
+
+        public void OnResultExecuting(ResultExecutingContext context)
+        {
+            if (_notificationContext.HasNotifications)
             {
-                context.HttpContext.Response.StatusCode = (int) HttpStatusCode.BadRequest;
+                context.HttpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
                 context.HttpContext.Response.ContentType = "application/json";
 
                 var notifications = JsonConvert.SerializeObject(_notificationContext.Notifications);
-                await context.HttpContext.Response.WriteAsync(notifications);
+                context.HttpContext.Response.WriteAsync(notifications);
 
                 return;
             }
-
-            await next();
         }
     }
 }

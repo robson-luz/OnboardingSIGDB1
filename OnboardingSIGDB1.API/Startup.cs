@@ -9,6 +9,7 @@ using Microsoft.Extensions.Options;
 using OnboardingSIGDB1.Domain.Base;
 using OnboardingSIGDB1.Domain.Notifications;
 using OnboardingSIGDB1.IOC;
+using Swashbuckle.AspNetCore.Swagger;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,11 @@ namespace OnboardingSIGDB1.API
 
             services.AddMvc(options => options.Filters.Add<NotificationFilter>())
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "OnboardingSIGDB1-API", Version = "version 1" });
+            });
 
             //services.AddCors(options =>
             //{
@@ -60,6 +66,13 @@ namespace OnboardingSIGDB1.API
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
+                app.UseSwagger();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("./swagger/v1/swagger.json", "OnboardingSIGDB1.API");
+                    c.RoutePrefix = String.Empty;
+                });
             }
             else
             {
@@ -69,6 +82,8 @@ namespace OnboardingSIGDB1.API
 
             //app.UseCors("CorsPolicy");
             app.UseHttpsRedirection();
+
+
             app.UseMvc();
         }
     }

@@ -17,11 +17,13 @@ namespace OnboardingSIGDB1.API.Controllers
 
         private readonly ICargoRepository _cargoRepository;
         private readonly ArmazenadorDeCargo _armazenador;
+        private readonly ExclusaoDeCargo _exclusao;
 
-        public CargoController(ICargoRepository cargoRepository, ArmazenadorDeCargo armazenador, IMapper mapper)
+        public CargoController(ICargoRepository cargoRepository, ArmazenadorDeCargo armazenador, ExclusaoDeCargo exclusao, IMapper mapper)
         {
             _cargoRepository = cargoRepository;
             _armazenador = armazenador;
+            _exclusao = exclusao;
             _mapper = mapper;
         }
 
@@ -63,7 +65,7 @@ namespace OnboardingSIGDB1.API.Controllers
         [HttpDelete("Cargos/Remover/{id}")]
         public ActionResult Remover(int id)
         {
-            _armazenador.Remover(id);
+            _exclusao.Excluir(id);
 
             return Ok();
         }

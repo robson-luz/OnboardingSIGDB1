@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace OnboardingSIGDB1.Data.Queries
+namespace OnboardingSIGDB1.Domain.Entities.Funcionarios
 {
     public static class FuncionarioQuery
     {

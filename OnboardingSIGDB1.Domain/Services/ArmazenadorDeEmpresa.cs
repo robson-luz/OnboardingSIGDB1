@@ -9,7 +9,7 @@ using System.Text;
 
 namespace OnboardingSIGDB1.Domain.Services
 {
-    public class ArmazenadorDeEmpresa
+    public class ArmazenadorDeEmpresa : IArmazenadorDeEmpresa
     {
         private readonly IEmpresaRepository _empresaRepository;
         private readonly NotificationContext _notificationContext;
@@ -66,14 +66,6 @@ namespace OnboardingSIGDB1.Domain.Services
 
                 _empresaRepository.Atualizar(empresa);
             }
-        }
-
-        public void Remover(int id)
-        {
-            var empresa = _empresaRepository.ObterPorId(id);
-
-            if(empresa != null)
-                _empresaRepository.Remover(empresa);
         }
     }
 }

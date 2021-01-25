@@ -6,7 +6,6 @@ using System.Text;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using OnboardingSIGDB1.Domain.Dto;
-using OnboardingSIGDB1.Data.Queries;
 
 namespace OnboardingSIGDB1.Data.Repositorios
 {
@@ -43,18 +42,13 @@ namespace OnboardingSIGDB1.Data.Repositorios
             return query;
         }
 
-        public List<Funcionario> ConsultarComFiltro(FuncionarioFiltroDto dto)
+        public IQueryable<Funcionario> ConsultaComFiltro()
         {
             var query = Context.Set<Funcionario>()
                 .Include(i => i.Empresa)
-                .Include(i => i.CargosVinculados)
-                .OndeNomeContem(dto.Nome)
-                .ComCpf(dto.Cpf)
-                .DataContratacaoMaiorQue(dto.DataContratacaoInicio)
-                .DataContratacaoMenorQue(dto.DataContratacaoFim);
-            //depois colocar paginacao
+                .Include(i => i.CargosVinculados);
 
-            return query.ToList();
+            return query;
         }
     }
 }

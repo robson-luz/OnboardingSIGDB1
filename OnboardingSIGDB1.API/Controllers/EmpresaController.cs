@@ -16,47 +16,55 @@ namespace OnboardingSIGDB1.API.Controllers
         private readonly IMapper _mapper;
 
         private readonly IEmpresaRepository _empresaRepository;
-        private readonly ArmazenadorDeEmpresa _armazenador;
+        private readonly IEmpresaConsulta _consulta;
+        private readonly IArmazenadorDeEmpresa _armazenador;
+        private readonly ExclusaoDeEmpresa _exclusao;
 
-        public EmpresaController(IEmpresaRepository empresaRepository, ArmazenadorDeEmpresa armazenador, IMapper mapper)
+        public EmpresaController(IEmpresaRepository empresaRepository, IEmpresaConsulta consulta, IArmazenadorDeEmpresa armazenador, ExclusaoDeEmpresa exclusao, IMapper mapper)
         {
             _empresaRepository = empresaRepository;
+            _consulta = consulta;
             _armazenador = armazenador;
+            _exclusao = exclusao;
             _mapper = mapper;
         }
 
 
+        // GET api/empresas/consultar    
+        /// <summary>    
+        /// Método para consultar usando filtro    
+        /// </summary>    
+        /// <returns></returns>   
         [HttpGet("Empresas/Consultar")]
         public List<EmpresaDto> ConsultarFiltro(EmpresaFiltroDto dto)
         {
-            var empresas = _empresaRepository
-                .ConsultarComFiltro(dto);
+            var empresas = _consulta.ConsultaFiltro(dto);
 
-            List<EmpresaDto> empresasDto = new List<EmpresaDto>();
+            //List<EmpresaDto> empresasDto = new List<EmpresaDto>();
 
-            foreach (var empresa in empresas)
-            {
-                empresasDto.Add(_mapper.Map<EmpresaDto>(empresa));
-            }
+            //foreach (var empresa in empresas)
+            //{
+            //    empresasDto.Add(_mapper.Map<EmpresaDto>(empresa));
+            //}
 
-            return empresasDto;
+            return empresas;
         }
 
-        [HttpGet("Empresas")]
-        public ActionResult<List<EmpresaDto>> Get()
-        {
-            var empresas = _empresaRepository
-                .Consultar();
+        //[HttpGet("Empresas")]
+        //public ActionResult<List<EmpresaDto>> Get()
+        //{
+        //    var empresas = _empresaRepository
+        //        .Consultar();
 
-            List<EmpresaDto> empresasDto = new List<EmpresaDto>();
+        //    List<EmpresaDto> empresasDto = new List<EmpresaDto>();
 
-            foreach (var empresa in empresas)
-            {
-                empresasDto.Add(_mapper.Map<EmpresaDto>(empresa));
-            }
+        //    foreach (var empresa in empresas)
+        //    {
+        //        empresasDto.Add(_mapper.Map<EmpresaDto>(empresa));
+        //    }
 
-            return empresasDto;
-        }
+        //    return empresasDto;
+        //}
 
 
         [HttpGet("Empresas/{id}")]
@@ -77,11 +85,10 @@ namespace OnboardingSIGDB1.API.Controllers
             return Ok();
         }
 
-        // DELETE api/values/5
         [HttpDelete("Empresas/Remover/{id}")]
         public ActionResult Remover(int id)
         {
-            _armazenador.Remover(id);
+            _exclusao.Excluir(id);
 
             return Ok();
         }
