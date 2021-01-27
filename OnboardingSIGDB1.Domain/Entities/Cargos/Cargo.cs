@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using FluentValidation;
+using OnboardingSIGDB1.Domain.Resources;
 
 namespace OnboardingSIGDB1.Domain.Entities.Cargos
 {
@@ -11,7 +12,7 @@ namespace OnboardingSIGDB1.Domain.Entities.Cargos
     {
         public string Descricao { get; private set; }
 
-        public virtual ICollection<FuncionarioCargo> FuncionariosCargos { get; private set; }
+        public virtual ICollection<FuncionarioCargo> FuncionariosCargos { get; private set; } = new List<FuncionarioCargo>();
 
         public Cargo(string descricao)
         {
@@ -22,11 +23,11 @@ namespace OnboardingSIGDB1.Domain.Entities.Cargos
         {
             RuleFor(c => c.Descricao)
                 .NotNull().NotEmpty()
-                .WithMessage("Campo 'Descriçao' é obrigatório.");
+                .WithMessage(CargoResource.CampoDescricaoObrigatorio);
 
             RuleFor(c => c.Descricao)
-                .MaximumLength(150)
-                .WithMessage("Campo 'Descrição' deve ter menos que 250 caracteres.");
+                .MaximumLength(250)
+                .WithMessage(CargoResource.CampoDescricaoDeveTerMenosQue250);
 
             ValidationResult = Validate(this);
 
@@ -36,6 +37,14 @@ namespace OnboardingSIGDB1.Domain.Entities.Cargos
         public void AlterarDescricao(string descricao)
         {
             Descricao = descricao;
+        }
+
+        public void AdicionarFuncionario(FuncionarioCargo funcionarioCargo)
+        {
+            if (funcionarioCargo == null)
+                return;
+
+            FuncionariosCargos.Add(funcionarioCargo);
         }
     }
 }

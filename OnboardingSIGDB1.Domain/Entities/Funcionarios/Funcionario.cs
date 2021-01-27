@@ -17,7 +17,7 @@ namespace OnboardingSIGDB1.Domain.Entities.Funcionarios
         public int? IdEmpresa { get; set; }
         public virtual Empresa Empresa { get; private set; }
 
-        public virtual ICollection<FuncionarioCargo> CargosVinculados { get; set; }
+        public virtual ICollection<FuncionarioCargo> CargosVinculados { get; set; } = new List<FuncionarioCargo>();
 
         public Funcionario(string nome, string cpf, DateTime? dataContratacao)
         {

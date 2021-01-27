@@ -4,6 +4,7 @@ using System.Text;
 using OnboardingSIGDB1.Domain.Base;
 using OnboardingSIGDB1.Domain.Entities.Funcionarios;
 using FluentValidation;
+using OnboardingSIGDB1.Domain.Resources;
 
 namespace OnboardingSIGDB1.Domain.Entities.Empresas
 {
@@ -31,23 +32,23 @@ namespace OnboardingSIGDB1.Domain.Entities.Empresas
         {
             RuleFor(e => e.Nome)
                 .NotNull().NotEmpty()
-                .WithMessage("Campo'Nome' é obrigatório.");
+                .WithMessage(EmpresaResource.CampoNomeObrigatorio);
 
             RuleFor(e => e.Nome)
                 .MaximumLength(150)
-                .WithMessage("Campo'Nome' deve ter menos que 150 caracteres.");
+                .WithMessage(EmpresaResource.CampoNomeDeveTerMenosQue150);
 
             RuleFor(e => e.Cnpj)
                 .NotNull().NotEmpty()
-                .WithMessage("Campo'Cnpj' é obrigatório.");
+                .WithMessage(EmpresaResource.CampoCnpjObrigatorio);
 
             RuleFor(e => e.Cnpj)
                 .MaximumLength(14)
-                .WithMessage("Campo'Cpnj' está fora do tamanho padrão.");
+                .WithMessage(EmpresaResource.CampoCnpjForaDoTamanhoPadrao);
 
             RuleFor(e => e.DataFundacao)
                 .GreaterThan(DateTime.MinValue)
-                .WithMessage("Campo 'Data Fundação' inválido.");
+                .WithMessage(EmpresaResource.CampoDataFundacaoInvalido);
 
             ValidationResult = Validate(this);
 
