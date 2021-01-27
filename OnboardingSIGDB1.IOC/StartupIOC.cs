@@ -36,11 +36,12 @@ namespace OnboardingSIGDB1.IOC
             services.AddScoped(typeof(IArmazenadorDeCargo), typeof(ArmazenadorDeCargo));
             services.AddScoped(typeof(IArmazenadorDeFuncionario), typeof(ArmazenadorDeFuncionario));
 
-            services.AddScoped<ExclusaoDeEmpresa>();
-            services.AddScoped<ExclusaoDeCargo>();
-            services.AddScoped<ExclusaoDeFuncionario>();
-            services.AddScoped<VinculacaoDeFuncionarioACargo>();
-            services.AddScoped<VinculacaoDeFuncionarioAEmpresa>();
+            services.AddScoped(typeof(IExclusaoDeEmpresa), typeof(ExclusaoDeEmpresa));
+            services.AddScoped(typeof(IExclusaoDeCargo), typeof(ExclusaoDeCargo));
+            services.AddScoped(typeof(IExclusaoDeFuncionario), typeof(ExclusaoDeFuncionario));
+
+            services.AddScoped(typeof(IVinculacaoDeFuncionarioACargo), typeof(VinculacaoDeFuncionarioACargo));
+            services.AddScoped(typeof(IVinculacaoDeFuncionarioAEmpresa), typeof(VinculacaoDeFuncionarioAEmpresa));
 
             services.AddAutoMapper(typeof(StartupIOC));
         }

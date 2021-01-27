@@ -9,7 +9,7 @@ using System.Text;
 
 namespace OnboardingSIGDB1.Domain.Services
 {
-    public class VinculacaoDeFuncionarioAEmpresa
+    public class VinculacaoDeFuncionarioAEmpresa : IVinculacaoDeFuncionarioAEmpresa
     {
         private readonly IFuncionarioRepository _funcionarioRepository;
         private readonly IEmpresaRepository _empresaRepository;
@@ -37,7 +37,7 @@ namespace OnboardingSIGDB1.Domain.Services
 
             if (funcionario.IdEmpresa != 0)
             {
-                _notificationContext.AddNotification("500", "Não é possível alterar o vínculo de um funcinário com uma empresa.");
+                _notificationContext.AddNotification("500", "Não é possível alterar o vínculo de um funcionário com uma empresa.");
                 return;
             }
 

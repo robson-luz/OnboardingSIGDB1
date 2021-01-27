@@ -15,11 +15,5 @@ namespace OnboardingSIGDB1.Domain.Dto
         public string NomeEmpresa { get; set; }
 
         public int IdCargo { get; set; }
-
-        public FuncionarioDto()
-        {
-            if (!String.IsNullOrEmpty(Cpf))
-                Cpf = Cpf.Replace(".", string.Empty).Replace("-", string.Empty);
-        }
     }
 }

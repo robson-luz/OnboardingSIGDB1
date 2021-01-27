@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace OnboardingSIGDB1.Data.Repositorios
 {
-    public class CargoRepository : Repository<Cargo>
+    public class CargoRepository : Repository<Cargo>, ICargoRepository
     {
         public CargoRepository(DataContext context) : base(context)
         {

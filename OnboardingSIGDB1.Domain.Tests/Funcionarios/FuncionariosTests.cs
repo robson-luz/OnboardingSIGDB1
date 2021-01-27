@@ -1,6 +1,7 @@
 ﻿using Bogus;
 using OnboardingSIGDB1.Common.Tests.Base;
 using OnboardingSIGDB1.Common.Tests.CargosBuilder;
+using OnboardingSIGDB1.Common.Tests.EmpresasBuilder;
 using OnboardingSIGDB1.Common.Tests.FuncionariosBuilder;
 using OnboardingSIGDB1.Domain.Entities.Funcionarios;
 using System;
@@ -157,6 +158,36 @@ namespace OnboardingSIGDB1.Domain.Tests.Funcionarios
             funcionario.AlterarDataContratacao(dataContratacao);
 
             Assert.Equal(dataContratacao, funcionario.DataContratacao);
+        }
+
+        [Fact]
+        public void DeveAlterarIdEmpresa()
+        {
+            int idEmpresa = 5;
+
+            var funcionario = FuncionarioBuilder
+                .Novo()
+                .Build();
+
+            funcionario.AlterarIdEmpresa(idEmpresa);
+
+            Assert.Equal(idEmpresa, funcionario.IdEmpresa);
+        }
+
+        [Fact]
+        public void DeveAlterarEmpresa()
+        {
+            var empresa = EmpresaBuilder
+                .Novo()
+                .Build();
+
+            var funcionario = FuncionarioBuilder
+                .Novo()
+                .Build();
+
+            funcionario.AlterarEmpresa(empresa);
+
+            Assert.Equal(empresa, funcionario.Empresa);
         }
 
         [Fact]

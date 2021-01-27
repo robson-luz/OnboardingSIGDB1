@@ -39,17 +39,17 @@ namespace OnboardingSIGDB1.API
                 c.SwaggerDoc("v1", new Info { Title = "OnboardingSIGDB1-API", Version = "version 1" });
             });
 
-            //services.AddCors(options =>
-            //{
-            //    options.AddPolicy("CorsPolicy", builder =>
-            //    {
-            //        builder
-            //          .AllowAnyHeader()
-            //          .AllowAnyMethod()
-            //          .AllowCredentials()
-            //          .WithOrigins("http://localhost:8080");
-            //    });
-            //});
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy", builder =>
+                {
+                    builder
+                       .AllowAnyOrigin()
+                      .AllowAnyHeader()
+                      .AllowAnyMethod()
+                      .AllowCredentials();
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -80,7 +80,7 @@ namespace OnboardingSIGDB1.API
                 app.UseHsts();
             }
 
-            //app.UseCors("CorsPolicy");
+            app.UseCors("CorsPolicy");
             app.UseHttpsRedirection();
 
 

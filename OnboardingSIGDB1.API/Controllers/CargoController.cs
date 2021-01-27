@@ -11,15 +11,16 @@ using OnboardingSIGDB1.Domain.Entities.Cargos;
 
 namespace OnboardingSIGDB1.API.Controllers
 {
+    [Route("[controller]/[action]")]
     public class CargoController : Controller
     {
         private readonly IMapper _mapper;
 
         private readonly ICargoRepository _cargoRepository;
-        private readonly ArmazenadorDeCargo _armazenador;
-        private readonly ExclusaoDeCargo _exclusao;
+        private readonly IArmazenadorDeCargo _armazenador;
+        private readonly IExclusaoDeCargo _exclusao;
 
-        public CargoController(ICargoRepository cargoRepository, ArmazenadorDeCargo armazenador, ExclusaoDeCargo exclusao, IMapper mapper)
+        public CargoController(ICargoRepository cargoRepository, IArmazenadorDeCargo armazenador, IExclusaoDeCargo exclusao, IMapper mapper)
         {
             _cargoRepository = cargoRepository;
             _armazenador = armazenador;
@@ -27,24 +28,23 @@ namespace OnboardingSIGDB1.API.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet("Cargos")]
-        public ActionResult<List<CargoDto>> Get()
-        {
-            var cargos = _cargoRepository
-                .Consultar();
+        //[HttpGet]
+        //public ActionResult<List<CargoDto>> Get()
+        //{
+        //    var cargos = _cargoRepository
+        //        .Consultar();
 
-            List<CargoDto> cargosDto = new List<CargoDto>();
+        //    List<CargoDto> cargosDto = new List<CargoDto>();
 
-            foreach (var cargo in cargos)
-            {
-                cargosDto.Add(_mapper.Map<CargoDto>(cargo));
-            }
+        //    foreach (var cargo in cargos)
+        //    {
+        //        cargosDto.Add(_mapper.Map<CargoDto>(cargo));
+        //    }
 
-            return cargosDto;
-        }
+        //    return cargosDto;
+        //}
 
-
-        [HttpGet("Cargos/{id}")]
+        [HttpGet]
         public ActionResult<CargoDto> Get(int id)
         {
             var cargo = _cargoRepository.ObterPorId(id);
@@ -54,7 +54,7 @@ namespace OnboardingSIGDB1.API.Controllers
             return dto;
         }
 
-        [HttpPost("Cargos/Salvar")]
+        [HttpPost]
         public ActionResult Salvar(CargoDto dto)
         {
             _armazenador.Armazenar(dto);
@@ -62,7 +62,7 @@ namespace OnboardingSIGDB1.API.Controllers
             return Ok();
         }
 
-        [HttpDelete("Cargos/Remover/{id}")]
+        [HttpDelete]
         public ActionResult Remover(int id)
         {
             _exclusao.Excluir(id);

@@ -10,7 +10,7 @@ using System.Linq;
 
 namespace OnboardingSIGDB1.Domain.Services
 {
-    public class VinculacaoDeFuncionarioACargo
+    public class VinculacaoDeFuncionarioACargo : IVinculacaoDeFuncionarioACargo
     {
         private readonly IFuncionarioRepository _funcionarioRepository;
         private readonly ICargoRepository _cargoRepository;

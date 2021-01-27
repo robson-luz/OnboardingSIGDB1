@@ -11,6 +11,7 @@ using OnboardingSIGDB1.Domain.Entities.Funcionarios;
 
 namespace OnboardingSIGDB1.API.Controllers
 {
+    [Route("[controller]/[action]")]
     public class FuncionarioController : Controller
     {
         private readonly IMapper _mapper;
@@ -18,19 +19,25 @@ namespace OnboardingSIGDB1.API.Controllers
         private readonly IFuncionarioRepository _funcionarioRepository;
         private readonly IFuncionarioConsulta _consulta;
         private readonly IArmazenadorDeFuncionario _armazenador;
-        private readonly ExclusaoDeFuncionario _exclusao;
 
-        public FuncionarioController(IFuncionarioRepository funcionarioRepository, IFuncionarioConsulta consulta, IArmazenadorDeFuncionario armazenador, ExclusaoDeFuncionario exclusao, IMapper mapper)
+        private readonly IVinculacaoDeFuncionarioAEmpresa _vinculacaoDeFuncionarioAEmpresa;
+        private readonly IVinculacaoDeFuncionarioACargo _vinculacaoDeFuncionarioACargo;
+        private readonly IExclusaoDeFuncionario _exclusao;
+
+        public FuncionarioController(IFuncionarioRepository funcionarioRepository, IFuncionarioConsulta consulta, IArmazenadorDeFuncionario armazenador, IExclusaoDeFuncionario exclusao,
+            IVinculacaoDeFuncionarioAEmpresa vinculacaoDeFuncionarioAEmpresa, IVinculacaoDeFuncionarioACargo vinculacaoDeFuncionarioACargo, IMapper mapper)
         {
             _consulta = consulta;
             _exclusao = exclusao;
             _funcionarioRepository = funcionarioRepository;
             _armazenador = armazenador;
+            _vinculacaoDeFuncionarioACargo = vinculacaoDeFuncionarioACargo;
+            _vinculacaoDeFuncionarioAEmpresa = vinculacaoDeFuncionarioAEmpresa;
             _mapper = mapper;
         }
 
 
-        [HttpGet("Funcionarios/Consultar")]
+        [HttpGet("ConsultaFiltro")]
         public List<FuncionarioDto> ConsultarFiltro(FuncionarioFiltroDto dto)
         {
             var funcionarios = _consulta
@@ -63,7 +70,7 @@ namespace OnboardingSIGDB1.API.Controllers
         //}
 
 
-        [HttpGet("Funcionarios/{id}")]
+        [HttpGet]
         public ActionResult<FuncionarioDto> Get(int id)
         {
             var funcionario = _funcionarioRepository.ObterPorId(id);
@@ -73,7 +80,7 @@ namespace OnboardingSIGDB1.API.Controllers
             return dto;
         }
 
-        [HttpPost("Funcionarios/Salvar")]
+        [HttpPost]
         public ActionResult Salvar(FuncionarioDto dto)
         {
             _armazenador.Armazenar(dto);
@@ -81,10 +88,26 @@ namespace OnboardingSIGDB1.API.Controllers
             return Ok();
         }
 
-        [HttpDelete("Funcionarios/Remover/{id}")]
+        [HttpDelete]
         public ActionResult Remover(int id)
         {
             _exclusao.Excluir(id);
+
+            return Ok();
+        }
+
+        [HttpPost]
+        public ActionResult VincularEmpresa(FuncionarioDto dto)
+        {
+            _vinculacaoDeFuncionarioAEmpresa.VincularEmpresa(dto);
+
+            return Ok();
+        }
+
+        [HttpPost]
+        public ActionResult VincularCargo(FuncionarioDto dto)
+        {
+            _vinculacaoDeFuncionarioACargo.VincularCargo(dto);
 
             return Ok();
         }

@@ -9,7 +9,7 @@ using System.Text;
 
 namespace OnboardingSIGDB1.Domain.Services
 {
-    public class ExclusaoDeFuncionario 
+    public class ExclusaoDeFuncionario : IExclusaoDeFuncionario
     {
         private readonly IFuncionarioRepository _funcionarioRepository;
         private readonly NotificationContext _notificationContext;

@@ -11,6 +11,7 @@ using OnboardingSIGDB1.Domain.Entities.Empresas;
 
 namespace OnboardingSIGDB1.API.Controllers
 {
+    [Route("[controller]/[action]")]
     public class EmpresaController : Controller
     {
         private readonly IMapper _mapper;
@@ -18,9 +19,9 @@ namespace OnboardingSIGDB1.API.Controllers
         private readonly IEmpresaRepository _empresaRepository;
         private readonly IEmpresaConsulta _consulta;
         private readonly IArmazenadorDeEmpresa _armazenador;
-        private readonly ExclusaoDeEmpresa _exclusao;
+        private readonly IExclusaoDeEmpresa _exclusao;
 
-        public EmpresaController(IEmpresaRepository empresaRepository, IEmpresaConsulta consulta, IArmazenadorDeEmpresa armazenador, ExclusaoDeEmpresa exclusao, IMapper mapper)
+        public EmpresaController(IEmpresaRepository empresaRepository, IEmpresaConsulta consulta, IArmazenadorDeEmpresa armazenador, IExclusaoDeEmpresa exclusao, IMapper mapper)
         {
             _empresaRepository = empresaRepository;
             _consulta = consulta;
@@ -35,7 +36,7 @@ namespace OnboardingSIGDB1.API.Controllers
         /// Método para consultar usando filtro    
         /// </summary>    
         /// <returns></returns>   
-        [HttpGet("Empresas/Consultar")]
+        [HttpGet("ConsultaFiltro")]
         public List<EmpresaDto> ConsultarFiltro(EmpresaFiltroDto dto)
         {
             var empresas = _consulta.ConsultaFiltro(dto);
@@ -67,7 +68,7 @@ namespace OnboardingSIGDB1.API.Controllers
         //}
 
 
-        [HttpGet("Empresas/{id}")]
+        [HttpGet]
         public ActionResult<EmpresaDto> Get(int id)
         {
             var empresa = _empresaRepository.ObterPorId(id);
@@ -77,7 +78,7 @@ namespace OnboardingSIGDB1.API.Controllers
             return dto;
         }
 
-        [HttpPost("Empresas/Salvar")]
+        [HttpPost]
         public ActionResult Salvar(EmpresaDto dto)
         {
             _armazenador.Armazenar(dto);
@@ -85,7 +86,7 @@ namespace OnboardingSIGDB1.API.Controllers
             return Ok();
         }
 
-        [HttpDelete("Empresas/Remover/{id}")]
+        [HttpDelete]
         public ActionResult Remover(int id)
         {
             _exclusao.Excluir(id);
