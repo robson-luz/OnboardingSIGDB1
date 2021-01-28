@@ -14,7 +14,6 @@ namespace OnboardingSIGDB1.Domain.Tests.Cargos
         private readonly Faker _faker;
         private readonly int _id;
         private readonly string _descricao;
-        private readonly List<FuncionarioCargo> _funcionariosCargos;
 
         public CargoTests()
         {
@@ -54,7 +53,7 @@ namespace OnboardingSIGDB1.Domain.Tests.Cargos
         {
             var cargo = CargoBuilder
                 .Novo()
-                .ComDescricao(_faker.Lorem.Random.String2(151))
+                .ComDescricao(_faker.Lorem.Random.String2(251))
                 .Build();
 
             var resultado = cargo.Validar();

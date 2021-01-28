@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using OnboardingSIGDB1.Domain.Resources;
 
 namespace OnboardingSIGDB1.Domain.Services
 {
@@ -32,17 +33,17 @@ namespace OnboardingSIGDB1.Domain.Services
             
             if(cargo == null)
             {
-                _notificationContext.AddNotification("500", "Cargo a ser vinculado não está cadastrado.");
+                _notificationContext.AddNotification("500", FuncionarioResource.CargoNaoCadastrado);
                 return;
             }
             if (funcionario.Empresa == null)
             {
-                _notificationContext.AddNotification("500", "Não é possível vincular um cargo a um funcionário sem empresa.");
+                _notificationContext.AddNotification("500", FuncionarioResource.FuncionarioSemEmpresa);
                 return;
             }
             if (funcionario.CargosVinculados.Any(c => c.IdCargo == dto.IdCargo))
             {
-                _notificationContext.AddNotification("500", "Funcionário já possui o cargo a ser vinculado.");
+                _notificationContext.AddNotification("500", FuncionarioResource.FuncionarioJaPossuiCargo);
                 return;
             }
 

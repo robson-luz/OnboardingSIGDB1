@@ -3,6 +3,7 @@ using OnboardingSIGDB1.Domain.Entities.Funcionarios;
 using OnboardingSIGDB1.Domain.Helpers;
 using OnboardingSIGDB1.Domain.Interfaces;
 using OnboardingSIGDB1.Domain.Notifications;
+using OnboardingSIGDB1.Domain.Resources;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -31,13 +32,13 @@ namespace OnboardingSIGDB1.Domain.Services
 
             if (empresa == null)
             {
-                _notificationContext.AddNotification("500", "Empresa a ser vinculada não está cadastrada.");
+                _notificationContext.AddNotification("500", FuncionarioResource.EmpresaNaoCadastrada);
                 return;
             }
 
-            if (funcionario.IdEmpresa != 0)
+            if (funcionario.IdEmpresa != null)
             {
-                _notificationContext.AddNotification("500", "Não é possível alterar o vínculo de um funcionário com uma empresa.");
+                _notificationContext.AddNotification("500", FuncionarioResource.NPossivelAlterarVinculoJaPossuiEmpresa);
                 return;
             }
 

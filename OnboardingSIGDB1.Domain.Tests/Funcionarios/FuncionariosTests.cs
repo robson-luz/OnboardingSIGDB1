@@ -19,8 +19,6 @@ namespace OnboardingSIGDB1.Domain.Tests.Funcionarios
         private readonly string _cpf;
         private readonly DateTime _dataContratacao;
 
-        private readonly List<FuncionarioCargo> _funcionariosCargos;
-
         public FuncionariosTests()
         {
             _faker = FakerBuilder.Novo().Build();

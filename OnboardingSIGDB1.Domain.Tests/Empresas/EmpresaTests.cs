@@ -16,9 +16,6 @@ namespace OnboardingSIGDB1.Domain.Tests.Empresas
         private readonly string _nome;
         private readonly string _cnpj;
         private readonly DateTime _dataFundacao;
-
-        private readonly List<FuncionarioCargo> _funcionariosCargos;
-
         public EmpresaTests()
         {
             _faker = FakerBuilder.Novo().Build();
