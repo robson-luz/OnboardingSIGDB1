@@ -20,7 +20,7 @@ namespace OnboardingSIGDB1.IOC
             services.AddDbContext<DataContext>(options => 
                 options.UseSqlServer(configuration["ConnectionString"]));
 
-            services.AddScoped(typeof (IRepository<>), typeof(Repository<>));
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped(typeof(IEmpresaRepository), typeof(EmpresaRepository));
             services.AddScoped(typeof(ICargoRepository), typeof(CargoRepository));
             services.AddScoped(typeof(IFuncionarioRepository), typeof(FuncionarioRepository));

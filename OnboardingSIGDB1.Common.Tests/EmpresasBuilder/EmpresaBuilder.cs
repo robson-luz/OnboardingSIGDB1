@@ -46,7 +46,7 @@ namespace OnboardingSIGDB1.Common.Tests.EmpresasBuilder
             return this;
         }
 
-        public EmpresaBuilder ComDataFundacao(DateTime dataFundacao)
+        public EmpresaBuilder ComDataFundacao(DateTime? dataFundacao)
         {
             DataFundacao = dataFundacao;
             return this;

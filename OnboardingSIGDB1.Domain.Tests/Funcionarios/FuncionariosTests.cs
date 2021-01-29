@@ -17,13 +17,13 @@ namespace OnboardingSIGDB1.Domain.Tests.Funcionarios
         private readonly int _id;
         private readonly string _nome;
         private readonly string _cpf;
-        private readonly DateTime _dataContratacao;
+        private readonly DateTime? _dataContratacao;
 
         public FuncionariosTests()
         {
             _faker = FakerBuilder.Novo().Build();
-            _id = _faker.Random.Int(1, 500000);
-            _nome = _faker.Company.CompanyName();
+            _id = _faker.Random.Int(100);
+            _nome = _faker.Name.FullName();
             _cpf = "49186180061";
             _dataContratacao = _faker.Date.Recent();
         }
@@ -63,7 +63,7 @@ namespace OnboardingSIGDB1.Domain.Tests.Funcionarios
         {
             var funcionario = FuncionarioBuilder
                 .Novo()
-                .ComNome(_faker.Lorem.Random.String2(151))
+                .ComNome(_faker.Name.FullName())
                 .Build();
 
             var resultado = funcionario.Validar();

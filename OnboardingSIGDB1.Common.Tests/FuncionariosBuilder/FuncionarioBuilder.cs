@@ -12,6 +12,7 @@ namespace OnboardingSIGDB1.Common.Tests.FuncionariosBuilder
         protected int Id;
         protected string Nome;
         protected string Cpf;
+        protected int? IdEmpresa;
         protected DateTime? DataContratacao;
         public List<FuncionarioCargo> Cargos;
 
@@ -46,7 +47,13 @@ namespace OnboardingSIGDB1.Common.Tests.FuncionariosBuilder
             return this;
         }
 
-        public FuncionarioBuilder ComDataContratacao(DateTime dataContratacao)
+        public FuncionarioBuilder ComIdEmpresa(int idEmpresa)
+        {
+            IdEmpresa = idEmpresa;
+            return this;
+        }
+
+        public FuncionarioBuilder ComDataContratacao(DateTime? dataContratacao)
         {
             DataContratacao = dataContratacao;
             return this;
@@ -61,6 +68,7 @@ namespace OnboardingSIGDB1.Common.Tests.FuncionariosBuilder
         public Funcionario Build()
         {
             var funcionario = new Funcionario(Nome, Cpf, DataContratacao);
+            funcionario.AlterarIdEmpresa(IdEmpresa);
 
             AtribuirId(Id, funcionario);
 

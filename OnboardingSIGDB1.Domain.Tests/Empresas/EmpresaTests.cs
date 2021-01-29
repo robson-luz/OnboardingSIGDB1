@@ -15,11 +15,11 @@ namespace OnboardingSIGDB1.Domain.Tests.Empresas
         private readonly int _id;
         private readonly string _nome;
         private readonly string _cnpj;
-        private readonly DateTime _dataFundacao;
+        private readonly DateTime? _dataFundacao;
         public EmpresaTests()
         {
             _faker = FakerBuilder.Novo().Build();
-            _id = _faker.Random.Int(1, 500000);
+            _id = _faker.Random.Int(100);
             _nome = _faker.Company.CompanyName();
             _cnpj = "95301242000121";
             _dataFundacao = _faker.Date.Recent();

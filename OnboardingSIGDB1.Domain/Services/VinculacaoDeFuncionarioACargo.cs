@@ -36,7 +36,7 @@ namespace OnboardingSIGDB1.Domain.Services
                 _notificationContext.AddNotification("500", FuncionarioResource.CargoNaoCadastrado);
                 return;
             }
-            if (funcionario.Empresa == null)
+            if (funcionario.IdEmpresa == null)
             {
                 _notificationContext.AddNotification("500", FuncionarioResource.FuncionarioSemEmpresa);
                 return;
