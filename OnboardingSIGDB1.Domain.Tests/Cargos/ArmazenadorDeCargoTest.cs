@@ -15,6 +15,7 @@ using System.Linq;
 using Xunit;
 using OnboardingSIGDB1.Common.Tests.CargosBuilder;
 using OnboardingSIGDB1.Domain.Resources;
+using OnboardingSIGDB1.Domain.Entities.Cargos;
 
 namespace OnboardingSIGDB1.Domain.Tests.Funcionarios
 {
@@ -39,23 +40,21 @@ namespace OnboardingSIGDB1.Domain.Tests.Funcionarios
                 _cargoRepositoryMock.Object);
         }
 
-        //[Fact]
-        //public void DeveCadastrar()
-        //{
-        //    //Given
-        //    var dto = new CargoDto
-        //    {
-        //        Descricao = _faker.Random.AlphaNumeric(50)
-        //    };
+        [Fact]
+        public void DeveCadastrar()
+        {
+            //Given
+            var dto = new CargoDto
+            {
+                Descricao = _faker.Random.AlphaNumeric(50)
+            };
 
-        //    var cargoMock = CargoBuilder.Novo().Build();
+            //When
+            _armazenadorDeCargo.Armazenar(dto);
 
-        //    //When
-        //    _armazenadorDeCargo.Armazenar(dto);
-
-        //    //Then
-        //    _cargoRepositoryMock.Verify(cr => cr.Adicionar(), Times.Once);
-        //}
+            //Then
+            _cargoRepositoryMock.Verify(cr => cr.Adicionar(It.Is<Cargo>(c => c.Descricao == dto.Descricao)), Times.Once);
+        }
 
         [Fact]
         public void DeveAtualizar()
